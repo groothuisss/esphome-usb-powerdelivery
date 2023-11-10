@@ -1,7 +1,7 @@
 #include "esphome/core/log.h"
 #include "fusb302.h"
-#include "./include/PD_UFP.h"
-#include "./include/PD_UFP_Protocol.h"
+#include "PD_UFP.h"
+#include "PD_UFP_Protocol.h"
 #include <Arduino.h>
 
 namespace esphome {
