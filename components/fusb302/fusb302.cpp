@@ -1,3 +1,10 @@
+
+ /**
+ * USB Power Delivery integration in ESPHome
+ *	
+ * Authors: groothuisss & IMMRMKW
+ */
+
 #include "esphome/core/log.h"
 #include "fusb302.h"
 #include "PD_UFP.h"

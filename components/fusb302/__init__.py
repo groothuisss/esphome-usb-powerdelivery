@@ -1,10 +1,16 @@
+
+ ################################################
+ # USB Power Delivery integration in ESPHome    #
+ #	                                            #
+ # Authors: groothuisss & IMMRMKW               #
+ ################################################
+ 
 import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome import pins
 from esphome.const import (
     CONF_ID,
     CONF_INTERRUPT_PIN,
-    #CONF_ENABLE_PIN,
 )
 
 CONF_OPTIONAL_MAX_SUPPLY_VOLTAGE = 'maximum_supply_voltage'
@@ -22,20 +28,10 @@ MAXIMUM_SUPPLY_VOLTAGE_OPTIONS = {
     "20v": MaximumSupplyVoltage.PD20V,
 }
 
-#def validate_rx_pin(value):
-#    value = pins.internal_gpio_input_pin_schema(value)
-#    if CORE.is_esp8266 and value[CONF_NUMBER] >= 16:
-#        raise cv.Invalid("Pins GPIO16 and GPIO17 cannot be used as RX pins on ESP8266.")
-#    return value
-
-
-
 CONFIG_SCHEMA = cv.Schema({
     cv.GenerateID(): cv.declare_id(FUSB302),
     cv.Required(CONF_INTERRUPT_PIN): cv.All(pins.internal_gpio_input_pin_schema),
     cv.Optional(CONF_OPTIONAL_MAX_SUPPLY_VOLTAGE, default="5v"): cv.enum(MAXIMUM_SUPPLY_VOLTAGE_OPTIONS, lower=True),
-#    cv.Required(CONF_ENABLE_PIN): pins.internal_gpio_output_pin_schema,
-#    cv.Optional(CONF_ID, default=usb_powerdelivery): cv.int_,
 }).extend(cv.COMPONENT_SCHEMA)
 
 

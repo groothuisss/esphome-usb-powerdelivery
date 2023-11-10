@@ -1,3 +1,11 @@
+
+ /**
+ * USB Power Delivery integration in ESPHome
+ *	
+ * Authors: groothuisss & IMMRMKW
+ */
+  
+
 #pragma once
 
 #include "esphome/core/gpio.h"
@@ -11,7 +19,6 @@ enum MaximumSupplyVoltage {PD5V, PD9V, PD12V, PD15V, PD20V};
 class FUSB302 : public Component {
   public:
     void set_maximum_supply_voltage(MaximumSupplyVoltage maximum_supply_voltage) { maximum_supply_voltage_ = maximum_supply_voltage; }
-    //void set_interrupt_pin(uint8_t interruptPinGPIO) { interruptPin = interruptPinGPIO; }
     void set_interrupt_pin(InternalGPIOPin *pin) { this->interrupt_pin_ = pin; }
 
     void setup() override;

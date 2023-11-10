@@ -12,7 +12,17 @@
  * Support PD3.0 PPS
  * 
  */
-
+ 
+ 
+ 
+ /**
+ * USB Power Delivery integration in ESPHome
+ * Adaptations made to original source code by Ryan Ma.
+ *	
+ * Authors: groothuisss & IMMRMKW
+ */
+  
+ 
 #ifndef PD_UFP_H
 #define PD_UFP_H
 
@@ -62,8 +72,7 @@ class PD_UFP_core_c
     public:
         PD_UFP_core_c();
         // Init
-        // void init(enum PD_power_option_t power_option = PD_POWER_OPTION_MAX_5V);
-        void init(enum PD_power_option_t power_option = PD_POWER_OPTION_MAX_5V, uint8_t pin = 34);
+        void init(enum PD_power_option_t power_option = PD_POWER_OPTION_MAX_5V, uint8_t pin = 36); // Initializing INT pin of FUSB302 to a valid GPIO pin of ESP device
         void init_PPS(uint16_t PPS_voltage, uint8_t PPS_current, enum PD_power_option_t power_option = PD_POWER_OPTION_MAX_5V);
         // Task
         void run(void);
@@ -120,7 +129,7 @@ class PD_UFP_core_c
         virtual void status_log_event(uint8_t status, uint32_t * obj = 0) {}
 };
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////
 // PD_UFP_c, extended from PD_UFP_core_c, Add LED and Load switch functions
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 class PD_UFP_c : public PD_UFP_core_c
@@ -153,7 +162,7 @@ class PD_UFP_c : public PD_UFP_core_c
         void handle_led(void);
         // Load Switch
         uint8_t status_load_sw;
-};
+}; */
 
 
 
