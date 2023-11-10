@@ -1,4 +1,0 @@
-[submodule "components/fusb302/include/PD_FUSB302"]
-	path = components/fusb302/include/PD_FUSB302
-	url = https://github.com/groothuisss/PD_FUSB302.git
-	branch = develop
