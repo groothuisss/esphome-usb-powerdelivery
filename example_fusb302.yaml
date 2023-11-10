@@ -4,7 +4,7 @@ external_components:
   - source:
       type: git # Source is located in a git repository, instead of being included locally
       url: https://github.com/groothuisss/esphome-usb-powerdelivery.git
-      ref: develop # Branch or tag name
+      ref: master # Branch or tag name
     components: fusb302 # Which components to include from this source
 
 
